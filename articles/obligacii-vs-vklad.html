@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Почему облигации круче банковского вклада — Татьяна Бунегина</title>
+<meta name="description" content="Облигации простыми словами: как получать доход, «дав в долг» компании или государству. Анатомия облигации за минуту — в карточках.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/article.css">
+</head>
+<body>
+
+<div class="bar">
+  <div class="bar-in">
+    <a class="logo" href="../index.html"><span class="mark">И</span><span>Инвестиции просто<small>Татьяна Бунегина</small></span></a>
+    <a class="back" href="../index.html#articles">← Все статьи</a>
+  </div>
+</div>
+
+<div class="wrap">
+  <article>
+    <span class="a-tag">🚀 Первый шаг</span>
+    <h1>Почему облигации круче банковского вклада?</h1>
+    <div class="meta">Карусель · 4 карточки · Татьяна Бунегина</div>
+
+    <p class="lead-p">Многие думают, что инвестиции — это сложно, страшно и похоже на казино. Но что, если я скажу, что вы можете получать доход каждый день, просто «дав в долг» крупной компании или государству?</p>
+    <p>Без графиков и валидола. Это и есть облигации. Разбираемся в их анатомии за 1 минуту — листайте карточки.</p>
+
+    <div class="lib-car">
+      <button class="lib-prev" aria-label="Назад">‹</button>
+      <div class="lib-track">
+        <img src="../media/lib/oblig/1.jpg" alt="Почему облигации круче банковского вклада" loading="lazy">
+        <img src="../media/lib/oblig/2.jpg" alt="Облигации: карточка 2" loading="lazy">
+        <img src="../media/lib/oblig/3.jpg" alt="Облигации: карточка 3" loading="lazy">
+        <img src="../media/lib/oblig/4.jpg" alt="Облигации: карточка 4" loading="lazy">
+      </div>
+      <button class="lib-next" aria-label="Вперёд">›</button>
+    </div>
+
+    <p>Инвестиции — это не игра в угадайку, а расчёт. Теперь механика стала понятнее?</p>
+
+    <div class="cta">
+      <h3>Разберём облигации на практике</h3>
+      <p>В Академии собираем портфель из облигаций под вашу цель — спокойно, по шагам, с понятными правилами.</p>
+      <a class="btn" href="../index.html#academy">В академию →</a>
+    </div>
+    <p class="disclaimer">Материал носит образовательный характер и не является индивидуальной инвестиционной рекомендацией. 16+</p>
+  </article>
+</div>
+
+<footer>
+  <div class="wrap">© 2026 Инвестиции просто · Татьяна Бунегина · <a href="../index.html">на платформу</a></div>
+</footer>
+
+<script>
+document.querySelectorAll('.lib-car').forEach(c=>{
+  const t=c.querySelector('.lib-track'), step=()=>t.clientWidth;
+  c.querySelector('.lib-prev').addEventListener('click',()=>t.scrollBy({left:-step(),behavior:'smooth'}));
+  c.querySelector('.lib-next').addEventListener('click',()=>t.scrollBy({left:step(),behavior:'smooth'}));
+});
+</script>
+</body>
+</html>
