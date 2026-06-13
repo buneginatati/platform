@@ -45,7 +45,23 @@ blockquote{border-left:4px solid var(--blue-bright);background:#f6f9ff;border-ra
 /* figure */
 figure{margin:28px 0}
 figure img{border-radius:16px;border:1px solid var(--line);width:100%}
+figure video{width:100%;border-radius:16px;border:1px solid var(--line);background:#000;display:block}
 figcaption{font-size:15px;color:var(--muted);margin-top:10px;text-align:center}
+/* two-column options (sell/hold) */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0 24px}
+.opt{border-radius:16px;padding:20px 22px}
+.opt h4{font-size:18px;margin-bottom:6px}
+.opt p{font-size:17px;margin:0 0 12px}
+.opt p:last-child{margin-bottom:0}
+.opt.sell{background:#fdf3f2;border:1px solid #f6dad7}
+.opt.sell h4{color:var(--red)}
+.opt.hold{background:#eef9f1;border:1px solid #cdeccf}
+.opt.hold h4{color:var(--green)}
+/* trap block */
+.trap{background:#fff8ef;border:1px solid #f6e2c2;border-left:4px solid #e0a042;border-radius:0 16px 16px 0;padding:20px 24px;margin-bottom:16px}
+.trap .th{font-weight:800;color:var(--ink);font-size:19px;margin-bottom:8px;display:flex;gap:10px;align-items:flex-start}
+.trap p{margin:0;font-size:18px}
+@media(max-width:680px){.cols{grid-template-columns:1fr}.opt p{font-size:16px}.trap p{font-size:17px}}
 /* image carousel */
 .lib-car{position:relative;margin:26px 0}
 .lib-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:6px;scrollbar-width:none;-ms-overflow-style:none}
