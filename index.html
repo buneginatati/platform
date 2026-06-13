@@ -674,29 +674,43 @@ a:focus-visible,button:focus-visible,.seg-btn:focus-visible,.pm-tab:focus-visibl
 .vm-dot.active{background:#fff;transform:scale(1.25)}
 @media(max-width:680px){.vm-head{padding:24px 22px 14px}.vm-stage{padding:0 22px 8px}.vm-nav.prev{left:30px}.vm-nav.next{right:30px}.vm-slide video{max-height:56vh}}
 
-/* ===== READABILITY: увеличенный мелкий текст + контраст ===== */
-:root{--muted:#586173;--muted-2:#525c6e}
-.lead{font-size:clamp(16px,1.5vw,19px)}
-.hero .lead{font-size:clamp(17px,1.6vw,20px)}
-/* основной мелкий текст абзацев и списков -> 16px */
+/* ===== READABILITY: крупный текст, минимум 15px, основной ~18px ===== */
+:root{--muted:#4f5868;--muted-2:#4b5566}
+.lead{font-size:clamp(18px,1.6vw,21px);line-height:1.6}
+.hero .lead{font-size:clamp(19px,1.7vw,22px)}
+/* основной читаемый текст -> 18px */
 .pain p,.pillar p,.tool p,.art-body p,.case-quote,.lad-c p,.acad-card>p,
 .atier-card p,.course p,.q-body p,.about ul li,.hero-points li,
-.community p,.connect-col p,.cc-card p,.prod-tag{font-size:16px;line-height:1.65}
-.mod-body ul li,.lessons li,.offer-incl .lessons li{font-size:15.5px}
-.tool .feats li,.community .clist li,.prod-card p,.prod-note{font-size:15px}
-/* подписи / лейблы -> крупнее */
-.eyebrow,.bignum,.mw,.lad-c .mw,.mod-head .mt .mw,.art-tag,.art-card .art-tag{font-size:13px}
-.trust-item .t,.case-top .cr,.chip-g,.rb-note,.offer-note,.foot-col a,
-.foot-about,.am-meta,.art-card .am-meta,.am-cta .note,.art-card .am-cta .note,
-.signature,.case .term,.pkg-gh p,.prod-card h5,.chan-card p{font-size:14px}
-.disclaim,.foot-bottom,.foot-legal a,.sub-note,.connect-note,.cc-note,.pm-foot .src{font-size:13px}
-.hero-stats .lbl,.pillar .plink,.art-read,.pc-link{font-size:14px}
+.community p,.connect-col p,.cc-card p,.prod-tag,.q-head,.am-body p,
+.art-card p,.am-body blockquote,.art-card blockquote{font-size:18px;line-height:1.65}
+/* вторичный текст -> 17px */
+.mod-body ul li,.lessons li,.offer-incl .lessons li,.tool .feats li,
+.community .clist li,.prod-card p,.prod-note,.chip-g,.rb-note,.offer-note,
+.seg-btn,.pm-rows .r,.r-msg,.faq .q-head{font-size:17px}
+/* подписи, лейблы, футер, мета -> минимум 15px */
+.eyebrow,.bignum,.mw,.lad-c .mw,.mod-head .mt .mw,.art-tag,.art-card .art-tag,
+.trust-item .t,.case-top .cr,.foot-col a,.foot-about,.am-meta,.art-card .am-meta,
+.am-cta .note,.art-card .am-cta .note,.signature,.case .term,.pkg-gh p,
+.prod-card h5,.chan-card p,.disclaim,.foot-bottom,.foot-legal a,.sub-note,
+.connect-note,.cc-note,.pm-foot .src,.hero-stats .lbl,.pillar .plink,
+.art-read,.pc-link,.art-min,.pm-sub,.pm-h,.vm-cap .cnt,.vm-head .vm-sub,
+.foot-bottom div,.reality-badge,.rb-lab,.rb-sub,.rb-progress-meta,
+.prod-badge,.pp-per,.pgh,.acad-glabel,.atier-name{font-size:15px}
+/* навигация чуть крупнее, без поломки шапки */
+.nav-links a{font-size:14.5px}
 @media(max-width:680px){
   .pain p,.pillar p,.tool p,.art-body p,.case-quote,.lad-c p,.acad-card>p,
   .atier-card p,.course p,.q-body p,.about ul li,.hero-points li,
-  .community p,.connect-col p,.cc-card p{font-size:16px}
+  .community p,.connect-col p,.cc-card p,.am-body p,.art-card p{font-size:18px}
 }
-</style>
+/* добиваем оставшуюся мелочь до >=15px (таблицы, лейблы, модалки) */
+.pm-rows .r .k,.pm-rows .r .v,.r-tbl .r,.r-tbl .r .k,.r-tbl .r .v{font-size:16px}
+.pm-head .pm-sub,.vm-head .vm-sub,.pm-card .lbl,.pm-card .sub,.pm-tab,
+.tool .tlabel,.r-a .rt,.r-concl,.rb-week,.reality-split .chip,.ab .lab,
+.about ul li .ck,.pain .idx,.mod-body h5,.offer-incl h6,.edit,.hot,
+.pp-save,.art-min,.rb-progress-meta,.pm-h,.pm-card .up{font-size:15px}
+.nav-links a{font-size:15px;padding:9px 12px}
+.logo small{font-size:13px}
 </head>
 <body>
 
@@ -1025,7 +1039,7 @@ a:focus-visible,button:focus-visible,.seg-btn:focus-visible,.pm-tab:focus-visibl
             <li><span>✓</span> Ричи разбирает эмитентов прямо в чате</li>
             <li><span>✓</span> Разборы, ответы и поддержка на любом уровне</li>
           </ul>
-          <p style="margin-top:18px;font-size:13.5px;opacity:.7">Чат — это ежедневное общение и поддержка. Проект Миллионы с Татьяной Бунегиной — другое: отдельная ступень Академии с долгосрочным сопровождением.</p>
+          <p style="margin-top:18px;font-size:15px;opacity:.8">Чат — это ежедневное общение и поддержка. Проект Миллионы с Татьяной Бунегиной — другое: отдельная ступень Академии с долгосрочным сопровождением.</p>
         </div>
         <div class="chan-card">
           <div class="cc-ic">💬</div>
@@ -1193,7 +1207,7 @@ a:focus-visible,button:focus-visible,.seg-btn:focus-visible,.pm-tab:focus-visibl
         <div class="pm-rows">
           <div class="r"><span class="k"><b style="color:#fff">20 июля 2026</b> · VTBR · Дивиденды годовые 2025</span><span class="v pos">9,71 ₽ · 12,65%</span></div>
         </div>
-        <p style="color:#7e8aa3;font-size:13px;margin-top:16px">Скоро в календаре: даты публикации отчётностей и ГОСА — в следующих версиях.</p>
+        <p style="color:#7e8aa3;font-size:15px;margin-top:16px">Скоро в календаре: даты публикации отчётностей и ГОСА — в следующих версиях.</p>
       </div>
     </div>
     <div class="pm-foot">
