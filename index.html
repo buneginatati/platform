@@ -720,6 +720,17 @@ a:focus-visible,button:focus-visible,.seg-btn:focus-visible,.pm-tab:focus-visibl
 .lib-prev:hover,.lib-next:hover{background:var(--blue);color:#fff;border-color:transparent}
 .lib-prev{left:8px}.lib-next{right:8px}
 @media(max-width:680px){.lib-prev,.lib-next{width:40px;height:40px;font-size:22px}}
+/* cases: равная высота сегментов */
+.case-quote{min-height:96px}
+.ab .col{min-height:140px;display:flex;flex-direction:column;justify-content:center}
+.ab .col .lab{margin-bottom:6px}
+/* красивая кнопка видео-отзывов */
+.btn-video{position:relative;display:inline-flex;align-items:center;gap:12px;font-family:inherit;font-size:16px;font-weight:700;color:#fff;background:linear-gradient(120deg,#3b82f6,#1d4ed8 55%,#7c5cff);border:none;border-radius:100px;padding:16px 30px;cursor:pointer;box-shadow:0 16px 38px -12px rgba(29,78,216,.75);transition:transform .2s,box-shadow .2s;overflow:hidden;isolation:isolate}
+.btn-video:hover{transform:translateY(-2px) scale(1.015);box-shadow:0 22px 50px -12px rgba(124,92,255,.9)}
+.btn-video .play{flex:none;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.22);display:grid;place-items:center;font-size:12px;color:#fff;padding-left:2px}
+.btn-video .cnt{font-weight:600;opacity:.85;font-size:14px}
+.btn-video::before{content:"";position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-20deg);animation:shine 3.4s ease-in-out infinite;z-index:-1}
+@media(max-width:680px){.ab .col{min-height:92px}.btn-video{font-size:15px;padding:15px 22px}}
 </style>
 </head>
 <body>
@@ -880,7 +891,7 @@ a:focus-visible,button:focus-visible,.seg-btn:focus-visible,.pm-tab:focus-visibl
     </div>
       <button class="car-btn next" aria-label="Вперёд">›</button>
     </div>
-    <div class="cases-more rv"><button class="btn btn-ghost" data-modal="m-videos">Смотреть видео-отзывы учеников →</button></div>
+    <div class="cases-more rv"><button class="btn-video" data-modal="m-videos"><span class="play">▶</span> Смотреть видео-отзывы учеников <span class="cnt">· 5 историй</span></button></div>
     <p class="disclaim">* Результаты учеников индивидуальны и зависят от вложенных усилий, суммы и срока. Это не гарантия доходности и не индивидуальная инвестиционная рекомендация.</p>
   </div>
 </section>
