@@ -673,6 +673,29 @@ a:focus-visible,button:focus-visible,.seg-btn:focus-visible,.pm-tab:focus-visibl
 .vm-dot{width:9px;height:9px;border-radius:50%;border:none;background:rgba(255,255,255,.22);cursor:pointer;padding:0;transition:.2s}
 .vm-dot.active{background:#fff;transform:scale(1.25)}
 @media(max-width:680px){.vm-head{padding:24px 22px 14px}.vm-stage{padding:0 22px 8px}.vm-nav.prev{left:30px}.vm-nav.next{right:30px}.vm-slide video{max-height:56vh}}
+
+/* ===== READABILITY: увеличенный мелкий текст + контраст ===== */
+:root{--muted:#586173;--muted-2:#525c6e}
+.lead{font-size:clamp(16px,1.5vw,19px)}
+.hero .lead{font-size:clamp(17px,1.6vw,20px)}
+/* основной мелкий текст абзацев и списков -> 16px */
+.pain p,.pillar p,.tool p,.art-body p,.case-quote,.lad-c p,.acad-card>p,
+.atier-card p,.course p,.q-body p,.about ul li,.hero-points li,
+.community p,.connect-col p,.cc-card p,.prod-tag{font-size:16px;line-height:1.65}
+.mod-body ul li,.lessons li,.offer-incl .lessons li{font-size:15.5px}
+.tool .feats li,.community .clist li,.prod-card p,.prod-note{font-size:15px}
+/* подписи / лейблы -> крупнее */
+.eyebrow,.bignum,.mw,.lad-c .mw,.mod-head .mt .mw,.art-tag,.art-card .art-tag{font-size:13px}
+.trust-item .t,.case-top .cr,.chip-g,.rb-note,.offer-note,.foot-col a,
+.foot-about,.am-meta,.art-card .am-meta,.am-cta .note,.art-card .am-cta .note,
+.signature,.case .term,.pkg-gh p,.prod-card h5,.chan-card p{font-size:14px}
+.disclaim,.foot-bottom,.foot-legal a,.sub-note,.connect-note,.cc-note,.pm-foot .src{font-size:13px}
+.hero-stats .lbl,.pillar .plink,.art-read,.pc-link{font-size:14px}
+@media(max-width:680px){
+  .pain p,.pillar p,.tool p,.art-body p,.case-quote,.lad-c p,.acad-card>p,
+  .atier-card p,.course p,.q-body p,.about ul li,.hero-points li,
+  .community p,.connect-col p,.cc-card p{font-size:16px}
+}
 </style>
 </head>
 <body>
