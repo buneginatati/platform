@@ -711,6 +711,16 @@ a:focus-visible,button:focus-visible,.seg-btn:focus-visible,.pm-tab:focus-visibl
 .pp-save,.art-min,.rb-progress-meta,.pm-h,.pm-card .up{font-size:15px}
 .nav-links a{font-size:15px;padding:9px 12px}
 .logo small{font-size:13px}
+/* library image carousel */
+.lib-car{position:relative;margin:20px 0 8px}
+.lib-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:6px;scrollbar-width:none;-ms-overflow-style:none}
+.lib-track::-webkit-scrollbar{display:none}
+.lib-track img{flex:0 0 100%;scroll-snap-align:center;border-radius:14px;border:1px solid var(--line);background:#0b1426}
+.lib-prev,.lib-next{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.95);box-shadow:var(--shadow);cursor:pointer;font-size:26px;line-height:1;color:var(--ink);display:grid;place-items:center;transition:.2s}
+.lib-prev:hover,.lib-next:hover{background:var(--blue);color:#fff;border-color:transparent}
+.lib-prev{left:8px}.lib-next{right:8px}
+@media(max-width:680px){.lib-prev,.lib-next{width:40px;height:40px;font-size:22px}}
+</style>
 </head>
 <body>
 
@@ -964,13 +974,28 @@ a:focus-visible,button:focus-visible,.seg-btn:focus-visible,.pm-tab:focus-visibl
     <div class="seg-panel-wrap">
       <div class="seg-panel" id="s1"><div class="art-card">
         <span class="art-tag">🌱 С нуля</span>
-        <h3>С чего начать, если на счету ноль</h3>
-        <div class="am-meta">4 мин · Татьяна Бунегина · черновик</div>
-        <p>Самый частый стоп-сигнал, который я слышу: «Татьяна, у меня нет денег, чтобы инвестировать». Почти всегда за этим стоит не отсутствие денег, а отсутствие системы — деньги растворяются между надо и хочется.</p>
-        <p>Первый шаг — честно увидеть свой денежный поток и найти те 10–30%, которые можно отправить работать. Второй — начать с маленькой, но регулярной суммы. Среди моих учеников есть те, кто стартовал буквально с нуля и даже с долгами.</p>
-        <blockquote>Капитал собирается не из больших сумм, а из системных маленьких действий, повторённых много раз.</blockquote>
-        <p>Ответ на с чего начать простой: с решения начать и первого, пусть символического, пополнения. Систему и дисциплину мы соберём вместе.</p>
-        <div class="am-cta"><a href="#academy" class="btn btn-primary">В академию <span class="arr">→</span></a><span class="note">Черновик — замени своим текстом.</span></div>
+        <h3>Вы вечный двигатель, который вот-вот заглохнет?</h3>
+        <div class="am-meta">Карусель · 8 слайдов · Татьяна Бунегина</div>
+        <p>Иногда кажется, что вы всё делаете правильно. Работаете. Зарабатываете. Думаете о будущем.</p>
+        <p>А потом ловите себя на мысли — если я остановлюсь, что будет с деньгами? Они вообще умеют работать без меня… или только пока я кручу двигатель, как та белка в колесе?</p>
+        <p>Эта карусель не про мотивацию и не про «стань инвестором». Она про выбор, который в 2026 году становится ключевым.</p>
+        <p>На каждом слайде один важный вопрос: про усталость, риск жить только за счёт работы, хаос вместо системы. Про «начну потом» и про бесплатные советы, которые почему-то не делают богаче.</p>
+        <div class="lib-car">
+          <button class="lib-prev" aria-label="Назад">‹</button>
+          <div class="lib-track">
+            <img src="media/lib/s1/1.jpg" alt="Слайд 1: Вы вечный двигатель, который вот-вот заглохнет?" loading="lazy">
+            <img src="media/lib/s1/2.jpg" alt="Слайд 2" loading="lazy">
+            <img src="media/lib/s1/3.jpg" alt="Слайд 3" loading="lazy">
+            <img src="media/lib/s1/4.jpg" alt="Слайд 4" loading="lazy">
+            <img src="media/lib/s1/5.jpg" alt="Слайд 5" loading="lazy">
+            <img src="media/lib/s1/6.jpg" alt="Слайд 6" loading="lazy">
+            <img src="media/lib/s1/7.jpg" alt="Слайд 7" loading="lazy">
+            <img src="media/lib/s1/8.jpg" alt="Слайд 8" loading="lazy">
+          </div>
+          <button class="lib-next" aria-label="Вперёд">›</button>
+        </div>
+        <p>Листайте внимательно. На последнем слайде я призываю вас выбрать свою роль.</p>
+        <div class="am-cta"><a href="#academy" class="btn btn-primary">Выбрать свою роль <span class="arr">→</span></a></div>
       </div></div>
       <div class="seg-panel" id="s2"><div class="art-card">
         <span class="art-tag">🚀 Первый шаг</span>
@@ -1362,6 +1387,13 @@ document.querySelectorAll('.carousel').forEach(c=>{
   const p=c.querySelector('.prev'), n=c.querySelector('.next');
   if(p)p.addEventListener('click',()=>track.scrollBy({left:-step(),behavior:'smooth'}));
   if(n)n.addEventListener('click',()=>track.scrollBy({left:step(),behavior:'smooth'}));
+});
+// library image carousels
+document.querySelectorAll('.lib-car').forEach(c=>{
+  const t=c.querySelector('.lib-track');
+  const step=()=>t.clientWidth;
+  c.querySelector('.lib-prev').addEventListener('click',()=>t.scrollBy({left:-step(),behavior:'smooth'}));
+  c.querySelector('.lib-next').addEventListener('click',()=>t.scrollBy({left:step(),behavior:'smooth'}));
 });
 // reality detail toggle
 document.querySelectorAll('[data-rtoggle]').forEach(b=>b.addEventListener('click',()=>{
