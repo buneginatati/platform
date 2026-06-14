@@ -674,20 +674,19 @@ a:focus-visible,button:focus-visible,.seg-btn:focus-visible,.pm-tab:focus-visibl
 .vm-dot.active{background:#fff;transform:scale(1.25)}
 @media(max-width:680px){.vm-head{padding:24px 22px 14px}.vm-stage{padding:0 22px 8px}.vm-nav.prev{left:30px}.vm-nav.next{right:30px}.vm-slide video{max-height:56vh}}
 
-/* ===== READABILITY: крупный текст, минимум 15px, основной ~18px ===== */
+/* ===== READABILITY: крупный текст, минимум 20px ===== */
 :root{--muted:#4f5868;--muted-2:#4b5566}
-.lead{font-size:clamp(18px,1.6vw,21px);line-height:1.6}
-.hero .lead{font-size:clamp(19px,1.7vw,22px)}
-/* основной читаемый текст -> 18px */
+.lead{font-size:clamp(20px,1.7vw,23px);line-height:1.6}
+.hero .lead{font-size:clamp(21px,1.8vw,24px)}
+/* основной текст + вторичный -> 20px */
 .pain p,.pillar p,.tool p,.art-body p,.case-quote,.lad-c p,.acad-card>p,
 .atier-card p,.course p,.q-body p,.about ul li,.hero-points li,
 .community p,.connect-col p,.cc-card p,.prod-tag,.q-head,.am-body p,
-.art-card p,.am-body blockquote,.art-card blockquote{font-size:18px;line-height:1.65}
-/* вторичный текст -> 17px */
+.art-card p,.am-body blockquote,.art-card blockquote,
 .mod-body ul li,.lessons li,.offer-incl .lessons li,.tool .feats li,
 .community .clist li,.prod-card p,.prod-note,.chip-g,.rb-note,.offer-note,
-.seg-btn,.pm-rows .r,.r-msg,.faq .q-head{font-size:17px}
-/* подписи, лейблы, футер, мета -> минимум 15px */
+.seg-btn,.pm-rows .r,.r-msg,.faq .q-head{font-size:20px;line-height:1.6}
+/* подписи, лейблы, футер, мета, таблицы -> минимум 20px */
 .eyebrow,.bignum,.mw,.lad-c .mw,.mod-head .mt .mw,.art-tag,.art-card .art-tag,
 .trust-item .t,.case-top .cr,.foot-col a,.foot-about,.am-meta,.art-card .am-meta,
 .am-cta .note,.art-card .am-cta .note,.signature,.case .term,.pkg-gh p,
@@ -695,22 +694,23 @@ a:focus-visible,button:focus-visible,.seg-btn:focus-visible,.pm-tab:focus-visibl
 .connect-note,.cc-note,.pm-foot .src,.hero-stats .lbl,.pillar .plink,
 .art-read,.pc-link,.art-min,.pm-sub,.pm-h,.vm-cap .cnt,.vm-head .vm-sub,
 .foot-bottom div,.reality-badge,.rb-lab,.rb-sub,.rb-progress-meta,
-.prod-badge,.pp-per,.pgh,.acad-glabel,.atier-name{font-size:15px}
-/* навигация чуть крупнее, без поломки шапки */
-.nav-links a{font-size:14.5px}
-@media(max-width:680px){
-  .pain p,.pillar p,.tool p,.art-body p,.case-quote,.lad-c p,.acad-card>p,
-  .atier-card p,.course p,.q-body p,.about ul li,.hero-points li,
-  .community p,.connect-col p,.cc-card p,.am-body p,.art-card p{font-size:18px}
-}
-/* добиваем оставшуюся мелочь до >=15px (таблицы, лейблы, модалки) */
-.pm-rows .r .k,.pm-rows .r .v,.r-tbl .r,.r-tbl .r .k,.r-tbl .r .v{font-size:16px}
-.pm-head .pm-sub,.vm-head .vm-sub,.pm-card .lbl,.pm-card .sub,.pm-tab,
-.tool .tlabel,.r-a .rt,.r-concl,.rb-week,.reality-split .chip,.ab .lab,
+.prod-badge,.pp-per,.pgh,.acad-glabel,.atier-name,
+.pm-rows .r .k,.pm-rows .r .v,.r-tbl .r,.r-tbl .r .k,.r-tbl .r .v,
+.pm-head .pm-sub,.pm-card .lbl,.pm-card .sub,.pm-tab,
+.tool .tlabel,.r-a .rt,.r-concl,.rb-week,.reality-split .chip,.ab .lab,.ab .val,
 .about ul li .ck,.pain .idx,.mod-body h5,.offer-incl h6,.edit,.hot,
-.pp-save,.art-min,.rb-progress-meta,.pm-h,.pm-card .up{font-size:15px}
-.nav-links a{font-size:15px;padding:9px 12px}
-.logo small{font-size:13px}
+.pp-save{font-size:20px}
+/* у трекинговых ЗАГЛАВНЫХ лейблов уменьшаем разрядку, чтобы не разъезжались */
+.eyebrow,.bignum,.mw,.lad-c .mw,.mod-head .mt .mw,.art-tag,.art-card .art-tag,
+.ab .lab,.rb-lab,.acad-glabel,.prod-badge,.reality-badge,.tool .tlabel,.pm-h{letter-spacing:.07em}
+/* интерактив/шапка — чуть меньше, чтобы не ломать раскладку */
+.btn{font-size:17px}
+.nav-links a{font-size:16px;padding:9px 11px}
+.logo small{font-size:15px}
+@media(max-width:680px){.lead,.hero .lead{font-size:20px}}
+.reality-ribbon p,.subscribe .lead,.case-top .cn,.foot-col h5,.vm-cap .name{font-size:20px}
+.sub-btn,.offer-more,.pmtxt,.prod-more,.rtxt,.connect-btns .btn,.cc-btns .btn{font-size:18px}
+.btn-video .cnt{font-size:16px}
 /* library image carousel */
 .lib-car{position:relative;margin:20px 0 8px}
 .lib-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:6px;scrollbar-width:none;-ms-overflow-style:none}
@@ -721,8 +721,8 @@ a:focus-visible,button:focus-visible,.seg-btn:focus-visible,.pm-tab:focus-visibl
 .lib-prev{left:8px}.lib-next{right:8px}
 @media(max-width:680px){.lib-prev,.lib-next{width:40px;height:40px;font-size:22px}}
 /* cases: равная высота сегментов */
-.case-quote{min-height:96px}
-.ab .col{min-height:140px;display:flex;flex-direction:column;justify-content:center}
+.case-quote{min-height:112px}
+.ab .col{min-height:166px;display:flex;flex-direction:column;justify-content:center}
 .ab .col .lab{margin-bottom:6px}
 /* красивая кнопка видео-отзывов */
 .btn-video{position:relative;display:inline-flex;align-items:center;gap:12px;font-family:inherit;font-size:16px;font-weight:700;color:#fff;background:linear-gradient(120deg,#3b82f6,#1d4ed8 55%,#7c5cff);border:none;border-radius:100px;padding:16px 30px;cursor:pointer;box-shadow:0 16px 38px -12px rgba(29,78,216,.75);transition:transform .2s,box-shadow .2s;overflow:hidden;isolation:isolate}
@@ -730,7 +730,7 @@ a:focus-visible,button:focus-visible,.seg-btn:focus-visible,.pm-tab:focus-visibl
 .btn-video .play{flex:none;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.22);display:grid;place-items:center;font-size:12px;color:#fff;padding-left:2px}
 .btn-video .cnt{font-weight:600;opacity:.85;font-size:14px}
 .btn-video::before{content:"";position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-20deg);animation:shine 3.4s ease-in-out infinite;z-index:-1}
-@media(max-width:680px){.ab .col{min-height:92px}.btn-video{font-size:15px;padding:15px 22px}}
+@media(max-width:680px){.btn-video{font-size:15px;padding:15px 22px}}
 </style>
 </head>
 <body>
@@ -1007,7 +1007,7 @@ a:focus-visible,button:focus-visible,.seg-btn:focus-visible,.pm-tab:focus-visibl
         </div>
         <p>Листайте внимательно. На последнем слайде я призываю вас выбрать свою роль.</p>
         <div class="am-cta"><a href="#academy" class="btn btn-primary">Выбрать свою роль <span class="arr">→</span></a></div>
-        <h4 style="font-size:18px;margin:28px 0 12px">Ещё для старта</h4>
+        <h4 style="font-size:20px;margin:28px 0 12px">Ещё для старта</h4>
         <div class="arts">
           <a class="art" href="articles/dengi-i-deti.html">
             <div class="art-cover art-c2">👨‍👩‍👧</div>
@@ -1112,7 +1112,7 @@ a:focus-visible,button:focus-visible,.seg-btn:focus-visible,.pm-tab:focus-visibl
             <li><span>✓</span> Ричи разбирает эмитентов прямо в чате</li>
             <li><span>✓</span> Разборы, ответы и поддержка на любом уровне</li>
           </ul>
-          <p style="margin-top:18px;font-size:15px;opacity:.8">Чат — это ежедневное общение и поддержка. Проект Миллионы с Татьяной Бунегиной — другое: отдельная ступень Академии с долгосрочным сопровождением.</p>
+          <p style="margin-top:18px;font-size:20px;opacity:.8">Чат — это ежедневное общение и поддержка. Проект Миллионы с Татьяной Бунегиной — другое: отдельная ступень Академии с долгосрочным сопровождением.</p>
         </div>
         <div class="chan-card">
           <div class="cc-ic">💬</div>
@@ -1280,7 +1280,7 @@ a:focus-visible,button:focus-visible,.seg-btn:focus-visible,.pm-tab:focus-visibl
         <div class="pm-rows">
           <div class="r"><span class="k"><b style="color:#fff">20 июля 2026</b> · VTBR · Дивиденды годовые 2025</span><span class="v pos">9,71 ₽ · 12,65%</span></div>
         </div>
-        <p style="color:#7e8aa3;font-size:15px;margin-top:16px">Скоро в календаре: даты публикации отчётностей и ГОСА — в следующих версиях.</p>
+        <p style="color:#7e8aa3;font-size:20px;margin-top:16px">Скоро в календаре: даты публикации отчётностей и ГОСА — в следующих версиях.</p>
       </div>
     </div>
     <div class="pm-foot">

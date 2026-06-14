@@ -80,3 +80,12 @@ figcaption{font-size:15px;color:var(--muted);margin-top:10px;text-align:center}
 footer{border-top:1px solid var(--line);padding:30px 0;margin-top:40px;text-align:center;font-size:15px;color:var(--muted)}
 footer a{color:var(--blue);font-weight:600}
 @media(max-width:680px){article p,article li{font-size:18px}.principle p,.dont li,.myth p,.box{font-size:17px}.lib-prev,.lib-next{width:40px;height:40px;font-size:22px}}
+
+/* ===== минимум 20px (единый размер с лендингом) ===== */
+article p,article li,.principle p,.myth p,.trap p,.opt p,.dont li,.box,.cta p,.lib-track + p{font-size:20px}
+.lead-p{font-size:22px}
+.meta,figcaption,.disclaimer,.a-tag,.opt h4{font-size:20px}
+.a-tag{letter-spacing:.07em}
+footer,footer a{font-size:18px}
+.bar a.back,.logo small{font-size:16px}
+@media(max-width:680px){article p,article li,.principle p,.myth p,.trap p,.opt p,.dont li,.box,.cta p{font-size:20px}}
