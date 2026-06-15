@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Кабинет — Инвестиции просто</title>
+<meta name="description" content="Личный кабинет Академии «Инвестиции просто»: Фундаменталка и ИИ-помощники Ричи, психолог и нутрициолог в одном месте.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0a1f44;
+  --ink-soft:#34405a;
+  --muted:#6a7689;
+  --blue:#2f6bd8;
+  --blue-bright:#3b82f6;
+  --blue-deep:#0a2a6b;
+  --line:#ececf1;
+  --line-2:#f1f3f7;
+  --bg:#ffffff;
+  --green:#159a5a;
+  --red:#e2574c;
+  --radius:24px;
+  --shadow:0 24px 60px -28px rgba(20,40,90,.22);
+  --shadow-sm:0 12px 34px -22px rgba(20,40,90,.22);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--ink);background:#f6f7f9;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{line-height:1.1;letter-spacing:-.025em;font-weight:800;color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;padding:11px 20px;border-radius:100px;border:none;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s,color .2s;font-family:inherit;white-space:nowrap}
+.btn-primary{background:linear-gradient(120deg,#3b82f6,#1d4ed8 55%,#0a2a6b);color:#fff;box-shadow:0 14px 30px -14px rgba(29,78,216,.6)}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-ghost{background:#fff;color:var(--blue-deep);border:1.5px solid var(--line)}
+.btn-ghost:hover{border-color:var(--blue-bright)}
+
+/* HEADER — Apple-style pill nav */
+header{position:sticky;top:0;z-index:90;background:rgba(255,255,255,.82);backdrop-filter:saturate(180%) blur(18px);border-bottom:1px solid rgba(236,236,241,.8)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{display:flex;align-items:center;gap:11px;font-weight:800;font-size:16px;letter-spacing:-.02em;flex:none}
+.logo .mark{width:32px;height:32px;border-radius:9px;flex:none;background:linear-gradient(135deg,#3b82f6,#0a2a6b);display:grid;place-items:center;color:#fff;font-weight:900;font-size:15px;box-shadow:0 8px 18px -8px rgba(29,78,216,.6)}
+.logo small{display:block;font-size:10.5px;font-weight:500;color:var(--muted)}
+.access{display:flex;align-items:center;gap:14px;flex:none}
+.access .badge{font-size:12px;font-weight:600;color:var(--green);background:#e8f7ee;padding:7px 13px;border-radius:100px;display:inline-flex;align-items:center;gap:6px}
+.access .badge::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green)}
+.link-out{font-size:13.5px;font-weight:500;color:var(--muted);cursor:pointer}
+.link-out:hover{color:var(--blue)}
+
+/* WELCOME */
+.hello{padding:34px 0 10px}
+.hello h1{font-size:clamp(26px,3.4vw,38px);font-weight:900;margin-bottom:6px}
+.hello p{color:var(--muted);font-size:15px}
+
+/* TABS */
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:26px 0 22px}
+.tab{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:16px;cursor:pointer;transition:transform .2s,border-color .2s,box-shadow .2s;text-align:left}
+.tab:hover{transform:translateY(-3px);box-shadow:var(--shadow-sm)}
+.tab.active{border-color:var(--blue-bright);box-shadow:0 16px 34px -20px rgba(29,78,216,.45)}
+.tab .ic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-size:19px;color:#fff;margin-bottom:12px}
+.tab .ic.b{background:linear-gradient(135deg,#3b82f6,#0a2a6b)}
+.tab .ic.g{background:linear-gradient(135deg,#34d399,#159a5a)}
+.tab .ic.p{background:linear-gradient(135deg,#a78bfa,#6d28d9)}
+.tab .ic.o{background:linear-gradient(135deg,#fbbf24,#d97706)}
+.tab .tt{font-weight:700;font-size:15px;margin-bottom:2px}
+.tab .ts{font-size:12.5px;color:var(--muted);line-height:1.35}
+.tab .locked{font-size:11px;font-weight:600;color:var(--muted);margin-top:8px;display:inline-flex;align-items:center;gap:5px}
+
+/* PANEL */
+.panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-sm);overflow:hidden;margin-bottom:30px}
+.panel-head{display:flex;align-items:center;gap:12px;padding:18px 22px;border-bottom:1px solid var(--line-2)}
+.panel-head .av{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:800;font-size:15px;background:linear-gradient(135deg,#3b82f6,#0a2a6b);flex:none}
+.panel-head .nm{font-weight:700;font-size:15px}
+.panel-head .rl{font-size:12.5px;color:var(--muted)}
+.panel-head .open-app{margin-left:auto}
+
+.chat{padding:20px 22px;min-height:280px;display:flex;flex-direction:column;gap:12px;background:#fbfcfe}
+.msg{max-width:78%;padding:11px 15px;border-radius:16px;font-size:14px;line-height:1.5}
+.msg.me{align-self:flex-end;background:linear-gradient(120deg,#3b82f6,#1d4ed8);color:#fff;border-bottom-right-radius:5px}
+.msg.bot{align-self:flex-start;background:#eef1f6;color:var(--ink);border-bottom-left-radius:5px}
+.msg.bot b{color:var(--blue-deep)}
+
+.composer{display:flex;gap:10px;align-items:center;padding:14px 18px;border-top:1px solid var(--line-2);background:#fff}
+.composer input{flex:1;border:1.5px solid var(--line);border-radius:100px;padding:12px 18px;font-size:14px;font-family:inherit;color:var(--ink);outline:none;transition:border-color .2s}
+.composer input:focus{border-color:var(--blue-bright)}
+.composer .send{width:44px;height:44px;border-radius:50%;border:none;cursor:pointer;background:linear-gradient(120deg,#3b82f6,#1d4ed8);color:#fff;font-size:17px;display:grid;place-items:center;flex:none;transition:transform .2s}
+.composer .send:hover{transform:scale(1.06)}
+
+.disclaimer{text-align:center;color:var(--muted);font-size:12px;padding:0 0 34px;line-height:1.5}
+.disclaimer a{color:var(--blue)}
+
+@media(max-width:760px){
+  .tabs{grid-template-columns:1fr 1fr}
+  .access .badge{display:none}
+  .panel-head .open-app{display:none}
+}
+@media(max-width:460px){
+  .tabs{grid-template-columns:1fr 1fr;gap:10px}
+  .msg{max-width:88%}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="../index.html">
+      <span class="mark">И</span>
+      <span>Инвестиции просто<small>личный кабинет</small></span>
+    </a>
+    <div class="access">
+      <span class="badge">доступ до 12 июля</span>
+      <a class="link-out" href="../index.html">Выйти</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hello">
+    <h1>Привет, Татьяна 👋</h1>
+    <p>Всё в одном месте: разбор компаний и три ИИ-помощника. Открывается по твоему доступу.</p>
+  </section>
+
+  <section class="tabs" id="tabs">
+    <button class="tab" data-agent="fund">
+      <div class="ic b">📊</div>
+      <div class="tt">Фундаменталка</div>
+      <div class="ts">Разбор компаний и облигаций</div>
+    </button>
+    <button class="tab active" data-agent="richi">
+      <div class="ic b">📈</div>
+      <div class="tt">Ричи</div>
+      <div class="ts">Помощник по инвестициям</div>
+    </button>
+    <button class="tab" data-agent="psy">
+      <div class="ic p">💬</div>
+      <div class="tt">Психолог</div>
+      <div class="ts">Разбор состояний и решений</div>
+    </button>
+    <button class="tab" data-agent="nutri">
+      <div class="ic o">🥗</div>
+      <div class="tt">Нутрициолог</div>
+      <div class="ts">Питание под твои цели</div>
+    </button>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <div class="av" id="pAv">Р</div>
+      <div>
+        <div class="nm" id="pName">Ричи</div>
+        <div class="rl" id="pRole">помощник по инвестициям</div>
+      </div>
+      <button class="btn btn-ghost open-app" id="pOpen">Открыть полностью →</button>
+    </div>
+
+    <div class="chat" id="chat">
+      <div class="msg me">Разбери Ленэнерго за 2025</div>
+      <div class="msg bot">Смотрю отчёт МСФО: выручка <b>143 млрд</b> (+16,5%), EBITDA <b>77,6 млрд</b>, чистый долг отрицательный. Давай разложу по мультипликаторам и дивидендам?</div>
+    </div>
+
+    <div class="composer">
+      <input id="inp" type="text" placeholder="Напиши помощнику…" />
+      <button class="send" id="send" aria-label="Отправить">↑</button>
+    </div>
+  </section>
+
+  <p class="disclaimer">
+    16+ · Информация ознакомительная, <b>не является ИИР</b> (ст. 6.1 39-ФЗ). Решения по бумагам — на ответственности пользователя.<br>
+    Академия «Инвестиции просто» · <a href="#">условия и источники</a>
+  </p>
+
+</main>
+
+<script>
+/* ── Макет: данные агентов. В бою сюда подставляется проверка /api/login
+   и реальные вызовы DeepSeek с серверным промптом каждого агента. ── */
+var AGENTS = {
+  fund:  {name:'Фундаменталка', role:'разбор компаний и облигаций', ini:'Ф',
+          hello:'Выбери компанию — покажу профиль, финансы, мультипликаторы и дивиденды. Считать ничего не нужно.'},
+  richi: {name:'Ричи', role:'помощник по инвестициям', ini:'Р',
+          hello:'Привет! Назови компанию или вопрос по портфелю — разберём по полочкам.'},
+  psy:   {name:'Психолог', role:'разбор состояний и решений', ini:'П',
+          hello:'Я рядом. Что сейчас занимает голову — тревога, решение, отношения? Начнём с того, что важнее.'},
+  nutri: {name:'Нутрициолог', role:'питание под твои цели', ini:'Н',
+          hello:'Расскажи про цель и режим дня — соберём питание без диет-травм и голодовок.'}
+};
+
+var tabs = document.getElementById('tabs');
+var chat = document.getElementById('chat');
+var inp  = document.getElementById('inp');
+
+function selectAgent(key){
+  var a = AGENTS[key];
+  document.querySelectorAll('.tab').forEach(function(t){
+    t.classList.toggle('active', t.dataset.agent === key);
+  });
+  document.getElementById('pName').textContent = a.name;
+  document.getElementById('pRole').textContent = a.role;
+  document.getElementById('pAv').textContent = a.ini;
+  chat.innerHTML = '<div class="msg bot">'+a.hello+'</div>';
+  inp.focus();
+}
+
+tabs.addEventListener('click', function(e){
+  var t = e.target.closest('.tab');
+  if(t) selectAgent(t.dataset.agent);
+});
+
+function sendMsg(){
+  var v = inp.value.trim();
+  if(!v) return;
+  var me = document.createElement('div'); me.className='msg me'; me.textContent=v;
+  chat.appendChild(me);
+  inp.value='';
+  /* заглушка ответа — в бою тут ответ от DeepSeek через сервер */
+  var bot = document.createElement('div'); bot.className='msg bot';
+  bot.textContent='(демо) Здесь появится ответ помощника. Логика подключается на сервере.';
+  setTimeout(function(){ chat.appendChild(bot); chat.scrollTop=chat.scrollHeight; }, 350);
+  chat.scrollTop=chat.scrollHeight;
+}
+document.getElementById('send').addEventListener('click', sendMsg);
+inp.addEventListener('keydown', function(e){ if(e.key==='Enter') sendMsg(); });
+</script>
+</body>
+</html>

@@ -64,7 +64,9 @@ header{position:sticky;top:0;z-index:90;background:rgba(255,255,255,.78);backdro
 .nav-links{display:flex;align-items:center;gap:4px;background:#f6f7f9;padding:5px;border-radius:100px}
 .nav-links a{font-size:13.5px;font-weight:500;color:var(--ink-soft);padding:10px 15px;border-radius:100px;transition:background .2s,color .2s}
 .nav-links a:hover{background:#fff;color:var(--blue);box-shadow:var(--shadow-sm)}
-.nav-cta{flex:none}
+.nav-cta{flex:none;display:flex;gap:10px;align-items:center}
+.login-m{display:none}
+.nav-links.show .login-m{display:block;color:var(--blue);font-weight:600}
 .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
 .burger span{width:24px;height:2px;background:var(--ink);border-radius:2px;transition:.3s}
 
@@ -746,8 +748,9 @@ a:focus-visible,button:focus-visible,.seg-btn:focus-visible,.pm-tab:focus-visibl
       <a href="#cases">Результаты</a>
       <a href="#community">Комьюнити</a>
       <a href="#package">Мильёны</a>
+      <a href="cabinet/" class="login-m">Личный кабинет</a>
     </nav>
-    <div class="nav-cta"><a href="#package" class="btn btn-primary">Получить доступ <span class="arr">→</span></a></div>
+    <div class="nav-cta"><a href="cabinet/" class="btn btn-ghost">Войти</a><a href="#package" class="btn btn-primary">Получить доступ <span class="arr">→</span></a></div>
     <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
   </div>
 </header>
@@ -926,7 +929,41 @@ a:focus-visible,button:focus-visible,.seg-btn:focus-visible,.pm-tab:focus-visibl
           <li><span>✓</span> Оценка мультипликаторов и payout по дивидендам</li>
           <li><span>✓</span> Живёт в комьюнити-чате Инвестор на Миллион</li>
         </ul>
-        <div class="tfoot"><button class="btn btn-white" data-modal="m-richi" onclick="openModal('m-richi')">Подробнее <span class="arr">→</span></button></div>
+        <div class="tfoot"><a href="https://app.bunegina.ru/demo-richi.html" target="_blank" rel="noopener" class="btn btn-white">Попробовать бесплатно ↗</a><button class="btn tbtn-ghost" data-modal="m-richi" onclick="openModal('m-richi')">Подробнее</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- FREE MATERIALS -->
+<section class="s" id="free">
+  <div class="wrap">
+    <div class="s-head center rv"><span class="bignum">ПОПРОБУЙТЕ БЕСПЛАТНО</span><h2 style="margin:14px 0">Два шага <span class="accent">прямо сейчас</span></h2><p class="lead">Без регистрации и оплаты. Посчитайте свой миллион и задайте вопрос Ричи — это уже кусочек системы в действии.</p></div>
+    <div class="tools">
+      <div class="tool t-dark rv">
+        <div class="glow"></div>
+        <div class="tlabel">Калькулятор · бесплатно</div>
+        <h3>Когда у вас будет Мильён</h3>
+        <p>Введите сумму, которую откладываете в месяц, и доходность — увидите, через сколько накопится первый миллион и сколько из него прирастёт само.</p>
+        <ul class="feats">
+          <li><span>✓</span> Срок до цели — за пару секунд</li>
+          <li><span>✓</span> Видно вклад своими и доход сверху</li>
+          <li><span>✓</span> Работает на телефоне и компьютере</li>
+        </ul>
+        <div class="tfoot"><a href="https://app.bunegina.ru/million.html" target="_blank" rel="noopener" class="btn btn-white">Посчитать мой Мильён ↗</a></div>
+      </div>
+      <div class="tool t-blue rv">
+        <div class="glow"></div>
+        <div class="tlabel">Демо · 2 разбора бесплатно</div>
+        <h3>Спросите Ричи бесплатно</h3>
+        <p>Задайте Ричи вопрос про любую акцию — он разберёт её на живых данных Московской биржи. Два разбора бесплатно, без регистрации в академии.</p>
+        <ul class="feats">
+          <li><span>✓</span> Живые цены и дивиденды с MOEX</li>
+          <li><span>✓</span> Ставка ЦБ и макро — из официальных источников</li>
+          <li><span>✓</span> Объясняет простым языком, без воды</li>
+        </ul>
+        <div class="tfoot"><a href="https://app.bunegina.ru/demo-richi.html" target="_blank" rel="noopener" class="btn btn-white">Попробовать Ричи ↗</a></div>
       </div>
     </div>
   </div>
@@ -1167,7 +1204,7 @@ a:focus-visible,button:focus-visible,.seg-btn:focus-visible,.pm-tab:focus-visibl
   <div class="wrap">
     <div class="foot-grid">
       <div><div class="foot-logo"><span class="mark">И</span> Инвестиции просто</div><p class="foot-about">Платформа системных инвестиций Татьяны Бунегиной: академия, ИИ-инструменты и комьюнити для тех, кто хочет капитал и пассивный доход без хаоса.</p></div>
-      <div class="foot-col"><h5>Платформа</h5><a href="#academy">Академия</a><a href="#tools">Инструменты</a><a href="#articles">Библиотека</a><a href="#reality">Реалити Курс на Курилы</a><a href="#community">Комьюнити</a><a href="#cases">Результаты</a><a href="#package">Мильёны</a></div>
+      <div class="foot-col"><h5>Платформа</h5><a href="#academy">Академия</a><a href="#tools">Инструменты</a><a href="#articles">Библиотека</a><a href="#reality">Реалити Курс на Курилы</a><a href="#community">Комьюнити</a><a href="#cases">Результаты</a><a href="#package">Мильёны</a><a href="cabinet/">Личный кабинет</a></div>
       <div class="foot-col"><h5>Контакты</h5><a href="https://t.me/bunegina_tati" target="_blank" rel="noopener">Telegram-канал</a><a href="https://t.me/exito_ksenia" target="_blank" rel="noopener">Telegram менеджера</a><a href="https://wa.me/79667718547" target="_blank" rel="noopener">WhatsApp менеджера</a><a href="#contact">Задать вопрос</a></div>
     </div>
     <div class="foot-bottom"><div>ИП Бунегина Татьяна Васильевна · ОГРНИП 321565800017595 · ИНН 564679724235 &nbsp;|&nbsp; 16+ · © 2026 Все права защищены</div><div class="foot-legal"><a href="https://bunegina.ru/ps" target="_blank" rel="noopener">Пользовательское соглашение</a><a href="https://bunegina.ru/poldan" target="_blank" rel="noopener">Политика обработки ПДн</a><a href="https://bunegina.ru/soglasiepd" target="_blank" rel="noopener">Согласие на обработку ПДн</a><a href="https://bunegina.ru/soglinfd" target="_blank" rel="noopener">Согласие на рассылки</a><a href="https://bunegina.ru/cookie" target="_blank" rel="noopener">Cookie</a></div></div>
