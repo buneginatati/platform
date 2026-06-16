@@ -544,6 +544,10 @@ a:focus-visible,button:focus-visible,.seg-btn:focus-visible,.pm-tab:focus-visibl
 .btn-get:hover .arr{transform:translateX(4px)}
 .btn-get::before{content:"";position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:shine 3.2s ease-in-out infinite;z-index:-1}
 @keyframes shine{0%{left:-70%}55%,100%{left:150%}}
+/* shimmer-блик на всех заполненных кнопках */
+.btn-primary,.btn-white{position:relative;overflow:hidden;isolation:isolate}
+.btn-primary::after,.btn-white::after{content:"";position:absolute;top:0;left:-75%;width:45%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:shine 3.6s ease-in-out infinite;pointer-events:none}
+.btn-white::after{background:linear-gradient(120deg,transparent,rgba(124,92,255,.30),transparent)}
 .prod-more{background:none;border:none;color:#bfdbfe;font-family:inherit;font-size:14.5px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:7px;padding:8px 4px}
 .prod-more:hover{color:#fff}
 .prod-more .chev{transition:transform .3s;font-size:13px;display:inline-block}
@@ -779,6 +783,40 @@ a:focus-visible,button:focus-visible,.seg-btn:focus-visible,.pm-tab:focus-visibl
   </div>
 </section>
 
+<!-- НАЧНИТЕ ОТСЮДА · бесплатно, без регистрации -->
+<section class="s" id="free">
+  <div class="wrap">
+    <div class="s-head center rv"><span class="bignum">НАЧНИТЕ ОТСЮДА · БЕСПЛАТНО, БЕЗ РЕГИСТРАЦИИ</span><h2 style="margin:14px 0">Два шага <span class="accent">прямо сейчас</span></h2><p class="lead">Без регистрации и оплаты. Посчитайте свой миллион и задайте вопрос Ричи — это уже кусочек системы в действии.</p></div>
+    <div class="tools">
+      <div class="tool t-dark rv">
+        <div class="glow"></div>
+        <div class="tlabel">Калькулятор · бесплатно</div>
+        <h3>Когда у вас будет Мильён</h3>
+        <p>Введите сумму, которую откладываете в месяц, и доходность — увидите, через сколько накопится первый миллион и сколько из него прирастёт само.</p>
+        <ul class="feats">
+          <li><span>✓</span> Срок до цели — за пару секунд</li>
+          <li><span>✓</span> Видно вклад своими и доход сверху</li>
+          <li><span>✓</span> Работает на телефоне и компьютере</li>
+        </ul>
+        <div class="tfoot"><a href="https://app.bunegina.ru/million.html" target="_blank" rel="noopener" class="btn btn-white">Посчитать мой Мильён ↗</a></div>
+      </div>
+      <div class="tool t-blue rv">
+        <div class="glow"></div>
+        <div class="tlabel">Демо · 2 разбора бесплатно</div>
+        <h3>Спросите Ричи бесплатно</h3>
+        <p>Задайте Ричи вопрос про любую акцию — он разберёт её на живых данных Московской биржи. Два разбора бесплатно, без регистрации в академии.</p>
+        <ul class="feats">
+          <li><span>✓</span> Живые цены и дивиденды с MOEX</li>
+          <li><span>✓</span> Ставка ЦБ и макро — из официальных источников</li>
+          <li><span>✓</span> Объясняет простым языком, без воды</li>
+        </ul>
+        <div class="tfoot"><a href="https://app.bunegina.ru/demo-richi.html" target="_blank" rel="noopener" class="btn btn-white">Попробовать Ричи ↗</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
 <!-- PAINS -->
 <section class="s" id="pains">
   <div class="wrap">
@@ -930,40 +968,6 @@ a:focus-visible,button:focus-visible,.seg-btn:focus-visible,.pm-tab:focus-visibl
           <li><span>✓</span> Живёт в комьюнити-чате Инвестор на Миллион</li>
         </ul>
         <div class="tfoot"><a href="https://app.bunegina.ru/demo-richi.html" target="_blank" rel="noopener" class="btn btn-white">Попробовать бесплатно ↗</a><button class="btn tbtn-ghost" data-modal="m-richi" onclick="openModal('m-richi')">Подробнее</button></div>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="divider"></div>
-
-<!-- FREE MATERIALS -->
-<section class="s" id="free">
-  <div class="wrap">
-    <div class="s-head center rv"><span class="bignum">ПОПРОБУЙТЕ БЕСПЛАТНО</span><h2 style="margin:14px 0">Два шага <span class="accent">прямо сейчас</span></h2><p class="lead">Без регистрации и оплаты. Посчитайте свой миллион и задайте вопрос Ричи — это уже кусочек системы в действии.</p></div>
-    <div class="tools">
-      <div class="tool t-dark rv">
-        <div class="glow"></div>
-        <div class="tlabel">Калькулятор · бесплатно</div>
-        <h3>Когда у вас будет Мильён</h3>
-        <p>Введите сумму, которую откладываете в месяц, и доходность — увидите, через сколько накопится первый миллион и сколько из него прирастёт само.</p>
-        <ul class="feats">
-          <li><span>✓</span> Срок до цели — за пару секунд</li>
-          <li><span>✓</span> Видно вклад своими и доход сверху</li>
-          <li><span>✓</span> Работает на телефоне и компьютере</li>
-        </ul>
-        <div class="tfoot"><a href="https://app.bunegina.ru/million.html" target="_blank" rel="noopener" class="btn btn-white">Посчитать мой Мильён ↗</a></div>
-      </div>
-      <div class="tool t-blue rv">
-        <div class="glow"></div>
-        <div class="tlabel">Демо · 2 разбора бесплатно</div>
-        <h3>Спросите Ричи бесплатно</h3>
-        <p>Задайте Ричи вопрос про любую акцию — он разберёт её на живых данных Московской биржи. Два разбора бесплатно, без регистрации в академии.</p>
-        <ul class="feats">
-          <li><span>✓</span> Живые цены и дивиденды с MOEX</li>
-          <li><span>✓</span> Ставка ЦБ и макро — из официальных источников</li>
-          <li><span>✓</span> Объясняет простым языком, без воды</li>
-        </ul>
-        <div class="tfoot"><a href="https://app.bunegina.ru/demo-richi.html" target="_blank" rel="noopener" class="btn btn-white">Попробовать Ричи ↗</a></div>
       </div>
     </div>
   </div>
